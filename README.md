@@ -1,5 +1,5 @@
 ## flylib-boot简介
-flylib-boot是针对springboot构建的程序的基础框架，专门用于构建程序里的比如统一 
+flylib-boot是针对springboot构建的程序的基础框架，专门用于构建程序里的比如统一
 异常处理
 
 ## 功能
@@ -68,4 +68,21 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
     </build>
 </project>
 
+```
+
+捕获异常的实例
+```
+@RequestMapping("")
+    public String index() throws RuntimeException {
+        UserException userException = new UserException();
+        CustomRuntimeException cause = new CustomRuntimeException("001", "User not exists");
+        userException.initCause(cause);
+        throw userException;
+    }
+```
+输出到浏览器的结果
+```
+code:"001"
+message:"User not exists"
+throwable:{...}
 ```
