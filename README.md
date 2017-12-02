@@ -10,10 +10,10 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 在自己的项目中添加flylib-boot-starter的maven依赖
 ```
 <dependency>
-            <groupId>org.flylib</groupId>
-            <artifactId>flylib-boot-starter</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+    <groupId>org.flylib</groupId>
+    <artifactId>flylib-boot-starter</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
 ```
 并且要注意这里spring-boot版本是1.5.0.RELEASE.   另外需要添加spring-boot-maven-plugin
 实例参考spring-boot-demo项目，它的pom如下：
