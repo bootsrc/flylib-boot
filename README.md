@@ -82,7 +82,9 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 ```
 输出到浏览器的结果
 ```
-code:"001"
-message:"User not exists"
-throwable:{...}
+{
+    code:"001",
+    message:"User not exists",
+    throwable:{...}
+}
 ```
