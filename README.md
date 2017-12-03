@@ -70,7 +70,7 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 
 ```
 
-捕获异常的实例
+捕获异常的实例.
 ```
 @RequestMapping("")
     public String index() throws RuntimeException {
@@ -88,6 +88,8 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
     throwable:{...}
 }
 ```
+## 实现原理
+利用了@ControllerAdvice和@ExceptionHandler
 实现代码是
 ```
 package org.flylib.boot.starter.handler;
