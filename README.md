@@ -13,7 +13,7 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 ## 使用方法
 - Step 1:   进入目录flylib-boot-starter,执行<code>mvn install</code> 
 - Step 2:   在自己的项目中添加flylib-boot-starter的maven依赖. 并留意自己使用的spring-boot版本，去修改自己的pom.xml文件
-```
+```xml
 <dependency>
     <groupId>org.flylib</groupId>
     <artifactId>flylib-boot-starter</artifactId>
@@ -22,7 +22,7 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 ```
 并且要注意这里spring-boot版本是1.5.0.RELEASE.   另外需要添加spring-boot-maven-plugin
 实例参考spring-boot-demo项目，它的pom如下：
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -76,7 +76,15 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 ```
 
 - Step 3:  在自己的程序中new 一个UserException（自定义的异常类）设置捕获异常
-```
+```java
+/**
+ * 用户信息的异常
+ */
+public class UserException extends RuntimeException{
+
+}
+
+
 @RequestMapping("")
     public String index() throws RuntimeException {
         UserException userException = new UserException();
@@ -87,7 +95,7 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 ```
 - Step 4:  运行自己的Spring Boot项目
 输出到浏览器的结果
-```
+```json
 {
     code:"001",
     message:"User not exists",
@@ -97,7 +105,7 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 ## 实现原理
 利用了@ControllerAdvice和@ExceptionHandler
 实现代码是
-```
+```java
 package org.flylib.boot.starter.handler;
 
 import org.flylib.boot.starter.exception.CustomRuntimeException;
