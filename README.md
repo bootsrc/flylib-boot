@@ -4,14 +4,15 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 
 ## 功能
 包含一个Spring Boot的一些常见的基础组件的设置
-1. 针对Handler的全局的异常处理(处理所有Controller里的Handler里抛出的异常)
+**1. 针对Handler的全局的异常处理(处理所有Controller里的Handler里抛出的异常)
 2. Filter
-3. Interceptor
+3. Interceptor**
 
 注意：SpringBoot（SpringMVC)里的Handler特指@Controller注解的类里的每个处理HTTP请求的一个public method.
 
 ## 使用方法
-在自己的项目中添加flylib-boot-starter的maven依赖
+- Step 1:   进入目录flylib-boot-starter,执行<code>mvn install</code> 
+- Step 2:   在自己的项目中添加flylib-boot-starter的maven依赖. 并留意自己使用的spring-boot版本，去修改自己的pom.xml文件
 ```
 <dependency>
     <groupId>org.flylib</groupId>
@@ -74,7 +75,7 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 
 ```
 
-捕获异常的实例.
+- Step 3:  在自己的程序中new 一个UserException（自定义的异常类）设置捕获异常
 ```
 @RequestMapping("")
     public String index() throws RuntimeException {
@@ -84,6 +85,7 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
         throw userException;
     }
 ```
+- Step 4:  运行自己的Spring Boot项目
 输出到浏览器的结果
 ```
 {
