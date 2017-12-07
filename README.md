@@ -4,9 +4,9 @@ flylib-boot是针对springboot构建的程序的基础框架，专门用于构�
 
 ## 功能
 包含一个Spring Boot的一些常见的基础组件的设置
-**1. 针对Handler的全局的异常处理(处理所有Controller里的Handler里抛出的异常)
+1. 针对Handler的全局的异常处理(处理所有Controller里的Handler里抛出的异常)
 2. Filter
-3. Interceptor**
+3. Interceptor
 
 注意：SpringBoot（SpringMVC)里的Handler特指@Controller注解的类里的每个处理HTTP请求的一个public method.
 
